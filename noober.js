@@ -13,47 +13,49 @@ document.addEventListener('DOMContentLoaded', async function() {
   // 🔥 YOUR CODE GOES HERE 🔥
   // Write the recipe (algorithm) in the comments. Then, write the code.
   
+
   // Write the recipe (algorithm) in the comments. Then, write the code.
-  //Asking the Passenger for their name
+  //Getting the Passenger name
   let passenger = {
-    firstName : prompt(`Please enter your first name`),
-    lastName: prompt(`Please enter your last name`),
+    firstName : ride.passengerDetails.first,
+    lastName: ride.passengerDetails.last,
   }
 
-  //Asking the Passenger for their phone number
-  let phoneNumber = prompt (`Please enter your phone number:`)
+  //Getting the Passenger  phone number
+  let phoneNumber = ride.passengerDetails.phoneNumber
 
-  //Asking the Passenger for their pick up location
+  //Getting the Passenger pick up location
+
   let pickupLocation = {
-    street: prompt(`Please enter your pick up street address:`),
-    city: prompt(`Please enter your pick up city:`),
-    state: prompt(`Please enter your pick up state:`),
-    zip: prompt(`please enter your pick up zip code:`),
+    address: ride.pickupLocation.address,
+    city: ride.pickupLocation.city,
+    state: ride.pickupLocation.state,
+    zip: ride.pickupLocation.zip,
   }
 
-  //Asking the Passenger for their dropofflocation
+  //Getting the Passenger dropofflocation
   let dropoffLocation = {
-    street : prompt(`Please enter your drop off street address`),
-    city : prompt(`Please enter drop off your city`),
-    state : prompt(`Please enter your drop off state`),
-    zip : prompt(`please enter your drop off zip code`),
+    address : ride.dropoffLocation.address,
+    city : ride.dropoffLocation.city,
+    state : ride.dropoffLocation.state,
+    zip : ride.dropoffLocation.zip,
   }
     
-  //Asking the Passenger for the number of passenger in their party
-  let numberOfPassengers = prompt(`Please enter the number of passengers in your party`)
+  //Getting the number of passenger in the party
+  let numberOfPassengers = ride.numberOfPassengers
 
   //Setting conditions for number of passengers. First it needs not to exceed 7 or be less than 1 and if it's greater than 3, upgradde to NooberXL
-  if (numberOfPassengers >7 || numberOfPassengers <1) {
-    numberOfPassengers = prompt (`You number of passengers for each ride cannot exceed 7 or be lesss than 1 passenger. Please re-enter your number of passengers:`)
-  }
+  // if (numberOfPassengers >7 || numberOfPassengers <1) {
+  //   numberOfPassengers = prompt (`You number of passengers for each ride cannot exceed 7 or be lesss than 1 passenger. Please re-enter your number of passengers:`)
+  // }
 
-  //Asking the Passenger if they like NooberPurple
-  let purpleRequested = prompt(`Would you like a luxury Noober Purple car? Please enter Yes or No`)
+  //Getting the NooberPurple status
+  let purpleRequested = ride.purpleRequested
 
 
   //If the passenger has requested Noober Purple, set the ride level to NooberPurple, otherwise set
   //level appropriate to the number of passengers
-  if (purpleRequested == `Yes`) {
+  if (purpleRequested == true) {
     rideLevel = `Noober Purple`
   } 
     else if (numberOfPassengers >3) {
@@ -64,7 +66,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
   // display information in undestandable format to console
-  console.log(`${rideLevel} Passenger: ${passenger.firstName} ${passenger.lastName}- phone number: ${phoneNumber}. Pickup at ${pickupLocation.street}, ${pickupLocation.city}, ${pickupLocation.state} ${pickupLocation.zip}. Dropoff at ${dropoffLocation.street}, ${dropoffLocation.city}, ${dropoffLocation.state} ${dropoffLocation.zip}.`)
+  console.log(`${rideLevel} Passenger: ${passenger.firstName} ${passenger.lastName}- phone number: ${phoneNumber}. Pickup at ${pickupLocation.address}, ${pickupLocation.city}, ${pickupLocation.state} ${pickupLocation.zip}. Dropoff at ${dropoffLocation.address}, ${dropoffLocation.city}, ${dropoffLocation.state} ${dropoffLocation.zip}.`)
 
 
   // 🔥 YOUR CODE ENDS HERE 🔥
