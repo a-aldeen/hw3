@@ -44,14 +44,8 @@ document.addEventListener('DOMContentLoaded', async function() {
   //Getting the number of passenger in the party
   let numberOfPassengers = ride.numberOfPassengers
 
-  //Setting conditions for number of passengers. First it needs not to exceed 7 or be less than 1 and if it's greater than 3, upgradde to NooberXL
-  // if (numberOfPassengers >7 || numberOfPassengers <1) {
-  //   numberOfPassengers = prompt (`You number of passengers for each ride cannot exceed 7 or be lesss than 1 passenger. Please re-enter your number of passengers:`)
-  // }
-
   //Getting the NooberPurple status
   let purpleRequested = ride.purpleRequested
-
 
   //If the passenger has requested Noober Purple, set the ride level to NooberPurple, otherwise set
   //level appropriate to the number of passengers
